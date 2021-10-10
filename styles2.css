@@ -247,12 +247,24 @@
 
 img{
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     float: right;
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
     margin: 0 20px;
+}
+
+@media screen and (max-width: 960px){
+    img{
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 3rem;
+    }
+
+    .about__items p{
+        margin-top: 3rem;
+    }
 }
 
 
@@ -380,18 +392,18 @@ img{
 
 @media screen and (max-width: 960px){
     .services{
-        height: 1600px;
+        height: auto;
     }
     
     .services h1{
         font-size: 2rem;
-        margin-top: 12rem;
+        margin-top: 3rem;
     }
 }
 
 @media screen and (max-width: 480px){
     .services{
-        height: 1400px;
+        height: auto;
     }
 
     .services h1{
