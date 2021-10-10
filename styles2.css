@@ -309,23 +309,52 @@ img{
     color: #fff;
 }
 
+#curr_pro_1{
+    margin: 1rem;
+    height: 300px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17, 0.6) 100%), url(/images/black.jpg);
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+#fu_pro_1{
+    margin: 1rem;
+    height: 300px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17, 0.6) 100%), url(/images/pic4.jpg);
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+#fu_pro_2{
+    margin: 1rem;
+    height: 300px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17, 0.6) 100%), url(/images/pic5.jpg);
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
 .services h2{
     position: absolute;
-    top: 200px;
+    top: 100px;
     left: 30px;
 }
+
 
 .services__card p{
     position: absolute;
-    top: 230px;
+    top: 150px;
     left: 30px;
-}
-
-.note{
-    color: #fff;
-    text-align: center;
-    width: auto;
-    font-size: 1.3rem;
+    right: 30px;
+    text-align: justify;
 }
 
 .services__card button{
@@ -336,7 +365,7 @@ img{
     border-radius: 4px;
     background: #f77062;
     position: absolute;
-    top: 20px;
+    top: 200px;
     right: 30px;
     font-size: 1rem;
     cursor: pointer;
