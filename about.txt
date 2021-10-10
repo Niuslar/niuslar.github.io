@@ -1,0 +1,19 @@
+I am Nicolás Uslar Miano, an Industrial Civil Engineer from Chile with an MSc in Sustainable 
+Energy Systems from Queen Mary, University of London. 
+The focus of my masters thesis was about the stability of emerging photovoltaic technologies 
+on indoor spaces. The main use of these technologies is IoT devices, which led me to discover the 
+world of embedded systems. 
+
+Since then, I have taken many different courses on different topics, like Embedded C, Peripherals drivers development, Networking and more. 
+Currently I am learning about Operating Systems with the book "Operating Systems: Three Easy Pieces". 
+In parallel I am taking an online course on FreeRTOS. 
+
+My goal is to be comfortable with Bare Metal Programming, Embedded Linux and FreeRTOS in order to 
+be able to create a wide range of projects with a main focus on IoT devices. 
+
+If you want to know more about me, please feel free to send me an e-mail to uslarnicolas@gmail.com or visit 
+my LinkedIn or Github pages which can be found at the bottom of this page. 
+
+Thanks for stopping by! 
+
+Nicolás
