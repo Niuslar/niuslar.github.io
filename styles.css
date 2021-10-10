@@ -456,6 +456,9 @@
     .services__card{
         width: 300px;
     }
+    .services__card:nth-child(2){
+        width: 300px;
+    }
 }
 
 /* Footer CSS */
