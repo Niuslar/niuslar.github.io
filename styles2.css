@@ -30,7 +30,7 @@
 
 #navbar__logo {
     background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb119 100%);
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -43,7 +43,7 @@
     font-size: 2rem;
 }
 
-.fa-gem{
+.fa-laptop-code{
     margin-right: 0.5rem;
 }
 
