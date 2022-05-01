@@ -363,6 +363,17 @@ img{
     color: #fff;
 }
 
+#stm32_flash{
+    margin: 1rem;
+    height: 300px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17, 0.6) 100%), url(images/flash.png);
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
 #fu_pro_1{
     margin: 1rem;
     height: 300px;
