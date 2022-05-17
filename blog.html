@@ -50,7 +50,7 @@
             <div class="left-column">
                 <a class="anchor" id="top_post_1"></a>
                 <div class="card">
-                    <h1>Multichannel Temperature Controller</h1>
+                    <h1>HIL with Raspberry-Pi and STM32 Nucleo-64</h1>
                     <img src="/images/blog/stm32_pi.jpg" alt="blog "/>
                     <div class="project_text">
                         <h4>May 17, 2022 | <a href=https://github.com/Niuslar/Multichannel-Temperature-Control class="github_link" target="_blank">Link to Github Repository</a></h4>
@@ -87,44 +87,6 @@
                     </div>
                 </div>
 
-                <a class="anchor" id="top_post_2"></a>
-                <div class="card">
-                    <h1>Multichannel Temperature Controller</h1>
-                    <img src="/images/blog/stm32_pi.jpg" alt="blog "/>
-                    <div class="project_text">
-                        <h4>May 17, 2022 | <a href=https://github.com/Niuslar/Multichannel-Temperature-Control class="github_link" target="_blank">Link to Github Repository</a></h4>
-                        <p>After several months of working on personal projects, I decided it was time to contribute to a bigger project and work as part of a team. That’s when I found 
-                            a small team of engineers who let me join their team and help in developing an automatic incubator for laboratories. 
-                            Working with experienced engineers was exactly what I needed to improve my skills as an embedded engineer, and here’s a summary of my experience for the past five months. 
-                        </p>
-                        <div class="read_more" id="show_more_2">
-                            <h2>The goal of the project</h2>
-
-                            <p>Working with experienced engineers helped me realise what I was doing right and wrong and how I could improve as an embedded engineer. During the course of this project, I have learnt from using Git/Github as part of a team, to solving problems in a more efficient way. </p>
-                            
-                            <p>Here are some of my main contributions to the project</p>
-                            
-                            <h2>UART Communication</h2>
-                            <p>After writing the code to read ADC inputs and convert these to temperature, one important feature that we needed was to communicate with the MCU. This could be used to send messages from the MCU to a terminal and to send commands to the MCU for debugging. </p>
-                            
-                            <p>In order to achieve this, I had to create the following: </p>
-                            <li>FIFO Buffer to store incoming/outgoing data</li>
-                            <li>JSON-based parser to process commands </li>
-                            
-                            <h2>FIFO Buffer</h2>
-                            <p>While C++ has std::queues to implement FIFO buffers easily, I wanted to write my own template class as a learning experience. One of the main problems I faced with this buffer was an error in the data received when I sent data via UART very quickly. This was caused by a simultaneous access to a buffer from an interrupt handler and from the main program. To solve this, I opted to disable interrupts while the buffer is putting data into the queue. </p>
-                            
-                            <h2>JSON-based parser</h2>
-                            <p>This is another feature that could have been easily added by using third-party libraries. However, my goal was to learn as much as I could, so I wrote my own JSON-based parser to process incoming commands. 
-                                The parser takes a string as input and then it generates tokens, which store the basic components of a JSON string. 
-                                Once the whole string </p>
-                        </div>
-                        <div class="read_more_holder">
-                            <span expand-more data-hidetext="Show Less ..." data-showtext="Show More...." 
-                            data-target="show_more_2" class="btn-expand-more">...Show More</span>
-                        </div>
-                    </div>
-                </div>
 
             </div>
             
@@ -137,12 +99,6 @@
                 <div class="project_card" id="top_post_card">
                     <h2>Multichannel Temperature Controller</h2>
                     <a href="#top_post_1">
-                        <button>Go to post</button>
-                    </a>
-                </div>
-                <div class="project_card" id="top_post_card">
-                    <h2>Multichannel Temperature Controller</h2>
-                    <a href="#top_post_2">
                         <button>Go to post</button>
                     </a>
                 </div>
