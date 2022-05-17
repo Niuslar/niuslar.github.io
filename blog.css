@@ -5,8 +5,12 @@
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 .navbar{
-    background: #131313;
+    background: #141414;
     height: 80px; 
     display: flex;
     justify-content: center;
@@ -202,8 +206,7 @@
 
 .posts{
     display:flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     height: auto;
 }
 
@@ -234,7 +237,7 @@ p{
 }
 
 body{
-    background-color: #131313;
+    background-color: #141414;
 }
 
 body p{
@@ -247,10 +250,33 @@ body li{
     text-align: center;
 }
 
+.read_more{
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    position: relative;
+}
+
+.read_more.expand-active {
+    height: auto;
+    transition: height 0.5s ease-in-out;
+}
+
+.read_more_holder {
+    padding: 15px;
+    text-align: center;
+}
+
+.btn-expand-more{
+    cursor: pointer;
+    display: inline-block;
+}
+
 .left-column{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 50%;
+    float: left;
+    margin-left: 4rem;
+    margin-right: 2rem;
+    width: 75%;
 }
 
 .card{
@@ -265,6 +291,7 @@ body li{
 
 .card img{
     width: 100%;
+    height: 500px;
     margin-top: 1rem;
     border-radius: 8px;
     object-fit: cover;
@@ -289,19 +316,25 @@ h4 a:hover{
     text-align: justify;
 }
 
-/* This will be added when more projects have a page
+
 .right-column{
     float: right;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #142;
     width: 25%;
+    margin-right: 4rem;
     padding-left: 20px;
 }
 
+.right-column h3{
+    color:#e9e9e9;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .posts_link{
-    background-color: #b12a5b;
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -309,9 +342,9 @@ h4 a:hover{
     height: auto;
 }
 
-.project_card{
+#top_post_card{
     margin: 1rem 0;
-    height: 300px;
+    height: 150px;
     width: 300px;
     border-radius: 4px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17, 0.6) 100%), url(/images/blog/stm32_pi.jpg);
@@ -320,12 +353,17 @@ h4 a:hover{
     color: #fff;
 }
 
+.project_card:hover{
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+}
+
 .project_card h2{
     position: absolute;
-    top: 50px;
+    top: 10px;
     left: 30px;
     right: 30px;
-    text-align: justify;
+    text-align: left;
 }
 
 .project_card button{
@@ -336,13 +374,31 @@ h4 a:hover{
     border-radius: 4px;
     background: #f77062;
     position: absolute;
-    top: 200px;
+    top: 90px;
     right: 30px;
     font-size: 1rem;
     cursor: pointer;
 }
 
-*/
+a.anchor{
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 960px){
+    .posts{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-column{
+        visibility: hidden;
+    }   
+}
+
 /* Footer CSS */
 .footer__container{
     background-color: #141414;
