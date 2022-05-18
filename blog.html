@@ -53,8 +53,9 @@
                     <h1>Developing a Temperature Control System</h1>
                     <img src="/images/blog/stm32_pi.jpg" alt="blog "/>
                     <div class="project_text">
-                        <h4>May 17, 2022 | <a href=https://github.com/Niuslar/Multichannel-Temperature-Control class="github_link" target="_blank">Link to Github Repository</a></h4>
-                        <p>After several months of working on personal projects, I set myself the task to find a project where I could work and learn as part of a team. 
+                        <h4>May 18, 2022 | <a href=https://github.com/Niuslar/Multichannel-Temperature-Control class="github_link" target="_blank">Link to Github Repository</a></h4>
+                        <p>
+                            After several months of working on personal projects, I set myself the task of finding a project where I could work and learn as part of a team. 
                             That’s when I found a team of engineers developing an incubator for laboratories. After a quick call with one of the embedded engineers, I was assigned the task of helping in developing a temperature control system. 
                         </p>
                         <div class="read_more" id="show_more">
@@ -68,55 +69,55 @@
                         <li>PWM output for heaters and coolers</li> 
                         <li>PID Control to regulate PWM output</li>
                         <p>
-                            To date, all these features are ready and waiting for some real world testing once the custom PCB is finished.
-                            During the course of this project, I have learnt not only about embedded systems, but also about solving problems and team work. 
+                            To date, all these features are ready and waiting for some real world testing once the custom PCB is finished. 
+                            During the course of this project, I have learnt not only about embedded systems, but also about solving problems and team work.    
                         </p>
                         <p>
                             Here’s a bit of my main contributions, the main challenges I faced and the lessons I learnt.
                         </p>
                         <h2>From C to C++</h2>
                         <p>
-                            When I first started this project, I was given the choice of using C or C++. I chose C because I had used it for all my previous projects and I never had any problems with it. 
-                            After a couple of months of working with C, the project started to get bigger than I expected and the advantages of using an object oriented programming language were becoming obvious. While I still like C because of its simplicity compared to C++, I have really enjoyed working with all the features C++ offers. 
+                            When I first started this project, I was given the choice of using C or C++. I chose C because I had used it for all my previous projects and I had never had any problems with it. 
+                            After a couple of months of working with C, the project started to get bigger than initially expected and the advantages of using an object-oriented programming language were becoming obvious. 
+                            While I still like C because of its simplicity compared to C++, I have really enjoyed working with all the features C++ offers.                            
                         </p>
                         <h2>Reading ADC Channels</h2>
                         <p>
-                            One of the first things I started working on was reading the data from the multiple ADC channels and converting it to voltage. 
-                            To do this, I used a circular buffer and DMA. The main challenge of this part was finding a bug that wasn’t part of the code I had written, but from the STM32 auto-generated code. 
+                            One of the first things I started working on was reading the data from the multiple ADC channels and converting it to voltage. To do this, I used a circular buffer and DMA. The main challenge of this part was finding a bug that wasn’t part of the code I had written, but from the STM32 auto-generated code. 
                         </p>
                         <p>
-                            STM32 has a very easy to use GUI to configure the hardware and it auto-generates the relevant code. 
-                            For some reason, this code had a bug that prevented DMA from working properly when using it with ADC.
-                            Maybe next time I’ll set things up manually and avoid using pretty GUIs.
+                            STM32 has a very easy-to-use GUI to configure the hardware and it auto-generates the relevant code. For some reason, this code had a bug that prevented DMA from working properly when using it with ADC. 
+                            This made me realise that I need to be careful when using GUIs that generate the code for me.
                         </p>
                         <h2>Setting up hardware and software timers</h2>
                         <p>
-                            When we started the project we had a small microcontroller that didn’t have enough pins that supported hardware PWM, so we had to use a few GPIO to simulate PWM using interrupts. Apart from learning more about timers and PWM, the main lesson I got from writing this module was to always refer to the data sheet when something is not working as expected.
-                            When checking the timers with a logic analyser, I realised that the numbers in the code did not match what was being generated by the pin. That’s when I realised that the 8MHz crystal present in the development board was not being used for the main microcontroller, but for the debugging interface.  
+                            When we started the project we had a small microcontroller that didn’t have enough pins that supported hardware PWM, so we had to use a few GPIO to simulate PWM using interrupts. Apart from learning more about timers and PWM, the main lesson I got from writing this module was to always refer to the data sheet and reference manual when something is not working as expected.
+                            When checking the timers with a logic analyser, I noticed that the numbers in the code did not match what was being generated by the pin. That’s when I saw in the development board’s data sheet that the 8MHz crystal present was not being used for the main microcontroller, but for the debugging interface. 
                         </p>
                         <h2>UART Communication</h2>
                         <p>
                             After writing the code to read ADC inputs and control the PWM pins, one important feature that we needed was a way to communicate with the microcontroller. 
-                            This would be used to send messages from the MCU to a terminal and to send commands to the MCU for debugging.
+                            This would be used to send messages from the MCU to a terminal and to send commands to the MCU for debugging. 
                         </p>
-                        <p>In order to achieve this, I wrote the following:</p>
+                        <p>In order to achieve this, I wrote the following modules:</p>
                         <li>FIFO Buffer to store incoming/outgoing data</li>
                         <li>JSON-based parser to process commands</li>
                         <h2>FIFO Buffer</h2> 
                         <p>
-                            While C++ has std::queues to implement FIFO buffers easily, I wanted to write my own template class as a learning experience. One of the main problems I faced with this buffer was an error in the data received when I sent data via UART very quickly. This was caused by a race condition generated when an interrupt handler and the main program were accessing the buffer at the same time. 
-                            To solve this, I opted to disable interrupts while the buffer was busy. While this could cause a small delay in the data transfer, the delay was too short to make any difference. 
+                            While C++ has std::queues to implement FIFO buffers easily, I wanted to write my own template class as a learning experience. 
+                            One of the main problems I faced with this buffer was an error in the data received when I sent data via UART very quickly. This was caused by a race condition generated when an interrupt handler and the main program were accessing the buffer at the same time. To solve this, I opted to disable interrupts while the buffer was busy. 
+                            While this could cause a delay in the data transfer, this was too small to make any difference.
                         </p>
                         <h2>JSON-based parser</h2>
                         <p>
                             This is another feature that could have been easily added by using third-party libraries. However, my goal was to learn as much as I could, so I wrote my own JSON-based parser to process incoming commands. 
-                            To achieve this, I separated the parser into two parts. A tokeniser and the actual parser. 
+                            To achieve this, I divided the parser into two parts: a tokeniser and the actual parser. 
                         </p>
                         <p>
-                            The job of the tokeniser is to take the strings coming from the communications channel, process it to obtain tokens and store the tokens in a buffer. A token in this case, is the basic building block of a JSON string. These are: Curly braces, square brackets, colon, commas, strings and numbers.
+                            The job of the tokeniser is to process the strings coming from the communications channel, in order to obtain tokens and then store the tokens in a buffer. A token, in this case, is the basic building block of a JSON string. These are: curly braces, square brackets, colon, commas, strings and numbers. 
                         </p>
                         <p>
-                            With all the tokens in the buffer, the parser processes them using recursive functions to identify if the string is a JSON string and it has the right components. 
+                            With all the tokens in the buffer, the parser processes them using recursive functions to identify if the string is a JSON string and if it has the right components. 
                         </p>
                         <p>
                             Writing this parser was more challenging than I expected, and it helped me understand better how to use state machines and recursive functions. 
@@ -127,11 +128,11 @@
                             One of the engineers in the team had already set up a Github Action to check the application would build successfully using docker. This process generates a binary file that was very useful for setting up HIL. 
                         </p>
                         <p>
-                            The first step was to flash the STM32 using the raspberry pi. To do this, I wrote a Python script that used the pre-loaded bootloader in the STM32 to download the code using UART. 
-                            Once I checked this script worked correctly, it was time to connect the Raspberry Pi to Github. 
+                            The first step was to flash the STM32 using the Raspberry Pi. To do this, I wrote a Python script that used the pre-loaded bootloader in the STM32 to download the code using UART. 
                         </p>
                         <p>
-                            The first part was to set up the Rasperry Pi as a self-hosted runner, which meant Github could use it to run jobs every time a merge request was created. 
+                            Once I checked this script worked correctly, it was time to connect the Raspberry Pi to Github. 
+                            The first part was to set up the Raspberry Pi as a self-hosted runner, which meant Github could use it to run jobs every time a merge request was created. 
                             The next step was to define the workflow to do the following: 
                         </p>
                         <li>Each time a merge request is created, a job would check the program builds successfully and generate a .bin file. </li>
@@ -141,10 +142,10 @@
                             If the STM32 was flashed successfully, a series of tests using Pytest can be run. 
                         </li>
                         <p>
-                            Doing this was a very interesting and challenging experience, and now I am in the process of writing the tests for the STM32. 
+                            Doing this was a very interesting and challenging experience, and I am now in the process of writing the tests for the STM32. 
                         </p>
                         <p>
-                            Working with this team has been an invaluable experience. Sharing ideas, giving and receiving feedback and discussing things in a constructive way has helped me become a better embedded engineer and I can’t wait to see what the future holds.
+                            Working with this team has been an invaluable experience. Sharing ideas, giving and receiving feedback and discussing things in a constructive way has helped me become a better embedded engineer and I can’t wait to see what the future holds. 
                         </p>
                         <p>Thanks for reading!</p>
                         </div>
