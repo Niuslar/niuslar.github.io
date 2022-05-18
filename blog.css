@@ -407,6 +407,15 @@ a.anchor{
     .right-column{
         visibility: hidden;
     }   
+
+    .card img{
+        height: 200px;
+    }
+
+    .left-column{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 /* Footer CSS */
