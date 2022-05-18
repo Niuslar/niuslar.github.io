@@ -244,14 +244,14 @@ body p{
     margin: 1rem 0;
 }
 
-body li{
+.project_text li{
     font-size: 1.3rem;
     margin: 1rem 0;
     text-align: left;
     text-indent: 2rem;
 }
 
-body li::before{
+.project_text li::before{
     content:"- ";
 }
 
