@@ -2,120 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niuslar's Portfolio</title>
-    <link rel = "icon" href = "images/icon.png" type = "image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
-    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
-    crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Portfolio Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #555;
+        }
+        p {
+            line-height: 1.6;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <!--Navbar section-->
-    <nav class="navbar">
-        <div class="navbar__container">
-            <a href="index.html" id="navbar__logo"><i class="fas fa-laptop-code"></i>
-                NIUSLAR</a>
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar__menu">
-                <li class="navbar__item">
-                    <a href="index.html" class="navbar__links">Home</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="projects.html" class="navbar__links">Projects</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="blog.html" class="navbar__links">Blog</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="about.html" class="navbar__links">About Me</a>
-                </li>
-                <li class="navbar__btn">
-                    <a href="mailto:&#110;&#105;&#117;&#115;&#108;&#097;&#114;&#064;&#111;&#117;&#116;&#108;&#111;&#111;&#107;&#046;&#099;&#111;&#109;" class="button">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section-->
-    <div class="main">
-        <div class="main__container">
-            <div class="main__content">
-                <h1>WELCOME TO</h1>
-                <h2>MY PORTFOLIO</h2>
-                <p>A collection of personal projects</p>
-                <button class="main__btn"><a href="projects.html">Go To Projects
-                </a></button>
-                <button class="main__btn"><a href="about.html">About Me
-                </a></button>
-            </div>
-            <div class="main__img--container">
-                <img src="images/pic1.svg" alt="pic" id="main__img">
-            </div>
-        </div>
+    <div class="container">
+        <h1>Thank You for Visiting!</h1>
+        <p>
+            My portfolio is currently undergoing a transformation to better reflect my work and experiences. 
+            While it is not available at the moment, exciting updates are on the way.
+        </p>
+        <p>
+            In the meantime, feel free to connect with me via 
+            <a href="mailto:niuslar@outlook.com">email</a>
+        </p>
     </div>
-
-    <!-- Services Section-->
-    <div class="services">
-        <h1> A few of my projects</h1>
-        <div class="services__container">
-            <div class="services__card">
-                <h2>ESP32-LED Google Calendar</h2>
-                <form method="get" action="https://github.com/Niuslar/mqtt_calendar" target="_blank">
-                    <button>Go To Code</button>
-                </form>
-            </div>
-            <div class="services__card">
-                <h2>STM32 Multichannel Temperature Control System</h2>
-                <form method="get" action="https://github.com/Niuslar/Multichannel-Temperature-Control" target="_blank">
-                    <button>Go To Code</button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Footer Section -->
-    <div class="footer__container">
-        <div class="footer__links">
-            <div class="footer__link--wrapper">
-                <!--
-                <div class="footer__link--items">
-                    <h2>More Info</h2>
-                    <a href="/">My CV</a>
-                    <a href="/">Contact Info</a>
-                </div>
-                -->
-            </div>
-        </div>
-        <div class="social__media">
-            <div class="social__media--wrap">
-                <div class="footer__logo">
-                    <a href="index.html" id="footer__logo"><i class="fas fa-laptop-code">
-                        NIUSLAR
-                    </i></a>
-                </div>
-                <p class="website__rights">NIUSLAR 2021</p>
-                <div class="social__icons">
-                    <!--a href="" class="social__icon--link" target="_blank"> 
-                        <i class="fab fa-linkedin"></i>
-                    </a-->
-                    <a href="https://github.com/Niuslar" class="social__icon--link" target="_blank"> 
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
 </body>
 </html>
